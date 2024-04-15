@@ -54,7 +54,7 @@ def get_lowest_common_ancestor(root: Optional[Node], p: int, q: int) -> int:
 
 # nie zmieniaj poniższego kodu
 if __name__ == "__main__":
-    (p, q), node_values_str = input().strip().split(";")
+    p, q, node_values_str = input().strip().split(";")
     node_values = node_values_str.split(" ")
     root = create_binary_tree(node_values)
-    print(get_lowest_common_ancestor(root, p, q))
+    print(get_lowest_common_ancestor(root, int(p), int(q)))
