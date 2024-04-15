@@ -151,7 +151,7 @@ Explanation: Najniższy wspólny przodek węzłów 1 i 4 to węzeł 4.
 
 ### Zad.4. (25pkt)
 
-Dane jest drzewo binarne o korzeniem `root` raz liczba całkowita `target`. Zwróć `true`, jeśli istnieje taka ścieżka w tym drzewie od korzenia do liścia, taka że suma wszystkich wartości wzdłuż tej ścieżki jest równa `target`. W tym celu zaimplementuj metodę `has_path_sum(root: Optional[Node], target: int) -> bool`, która dla danych `root` oraz `target` zwróci `true` jeżeli taka ścieżka istnieje oraz `false` w przeciwnym wypadku.
+Dane jest drzewo binarne o korzeniu `root` oraz liczba całkowita `target`. Zwróć `true`, jeśli istnieje taka ścieżka w tym drzewie od korzenia do liścia, taka że suma wszystkich wartości wzdłuż tej ścieżki jest równa `target`. W tym celu zaimplementuj metodę `has_path_sum(root: Optional[Node], target: int) -> bool`, która dla danych `root` oraz `target` zwróci `true` jeżeli taka ścieżka istnieje oraz `false` w przeciwnym wypadku.
 
 **Przykład 1:**
 
