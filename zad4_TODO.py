@@ -50,7 +50,12 @@ def has_path_sum(root: Optional[Node], target: int) -> bool:
     # TODO: Dane jest drzewo binarne o korzeniem root raz liczba całkowita target.
     # Zwróć true, jeśli istnieje taka ścieżka w tym drzewie od korzenia do liścia,
     # taka że suma wszystkich wartości wzdłuż tej ścieżki jest równa target.
-    pass
+    if root == None:
+        return False
+    if target-root.val == 0 and root.left == None and root.right == None:
+        return True
+    else:
+        return has_path_sum(root.left, target-root.val) or has_path_sum(root.right, target-root.val)
 
 
 if __name__ == "__main__":
