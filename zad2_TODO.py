@@ -50,7 +50,14 @@ def get_level_order(root: Optional[Node]) -> List[List[int]]:
     # TODO: Dane jest drzewo binarne z korzeniem  root. 
     # Zadanie polega na przejściu drzewa poziomami od korzenia w dół, 
     # od lewej do prawej i zapisać proces przechodzenia drzewa.
-    pass
+    if root is not None:
+        left_arr = get_level_order(root.left) if root.left else []
+        right_arr = get_level_order(root.right) if root.right else []
+        max_len = max(len(left_arr), len(right_arr))
+        new_arr = [(left_arr[i] if i < len(left_arr) else []) + (right_arr[i] if i < len(right_arr) else []) for i in range(max_len)]
+        new_arr.insert(0, [root.val])
+        return new_arr
+    return []
 
 # nie zmieniaj poniższego kodu
 if __name__ == "__main__":
