@@ -48,12 +48,20 @@ def create_binary_tree(node_values: List[str]):
 
 def merge_trees(root1: Optional[Node], root2: Optional[Node]) -> Optional[Node]:
     # TODO: Mając dane 2 korzenie drzew binarnych root1 i root2, zwróć scalone drzewo. 
-    pass
+    if root1 or root2:
+        left_subtree = merge_trees(root1.left if root1 else None, root2.left if root2 else None)
+        right_subtree = merge_trees(root1.right if root1 else None, root2.right if root2 else None)
+        val = (root1.val if root1 else 0) + (root2.val if root2 else 0); 
+        return Node(val, left_subtree, right_subtree)
+    return None
 
 def display_preorder(root: Optional[Node]):
     # TODO: Mając podany korzeń drzewa binarnego wypisz jego elementy w kolejności preorder
     # Elementy powinny być oddzielone od siebie spacją
-    pass
+    if root is not None:
+        print(root.val, end=" ")
+        display_preorder(root.left)
+        display_preorder(root.right)
 
 # nie zmieniaj poniższego kodu
 if __name__ == "__main__":
